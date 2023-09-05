@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ordenamiento por Burbuja</title>
+</head>
+<body>
+    <h1>Ordenamiento por Burbuja</h1>
+    <label for="values">Ingrese valores separados por comas:</label>
+    <input type="text" id="values">
+    <label for="order">Seleccione el orden:</label>
+    <select id="order">
+        <option value="ascendente">Ascendente</option>
+        <option value="descendente">Descendente</option>
+    </select>
+    <button onclick="sortValues()">Ordenar</button>
+    <h2>Valores Ingresados:</h2>
+    <p id="originalValues"></p>
+    <h2>Valores Ordenados:</h2>
+    <p id="sortedValues"></p>
+
+    <script src="js/burbuja.js"></script>
+</body>
+</html>

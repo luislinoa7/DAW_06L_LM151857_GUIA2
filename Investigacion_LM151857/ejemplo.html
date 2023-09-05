@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lista de Tareas</title>
+</head>
+<body>
+  <h1>Lista de Tareas</h1>
+  
+  <input type="text" id="newTask" placeholder="Nueva tarea">
+  <button onclick="addTask()">Agregar tarea</button>
+  <button onclick="removeTask()">Eliminar última tarea</button>
+  
+  <ul id="taskList">
+    <!-- Las tareas se agregarán aquí -->
+  </ul>
+  
+  <script>
+    const taskList = []; // Arreglo para almacenar las tareas
+
+    function updateTaskList() {
+      const listElement = document.getElementById("taskList");
+      listElement.innerHTML = ""; // Limpiar la lista antes de actualizar
+
+      for (let i = 0; i < taskList.length; i++) {
+        const listItem = document.createElement("li");
+        listItem.textContent = taskList[i];
+        listElement.appendChild(listItem);
+      }
+    }
+
+    function addTask() {
+      const newTaskInput = document.getElementById("newTask");
+      const newTask = newTaskInput.value;
+
+      if (newTask.trim() !== "") {
+        taskList.push(newTask);
+        updateTaskList();
+        newTaskInput.value = ""; // Limpiar el campo de entrada
+      }
+    }
+
+    function removeTask() {
+      if (taskList.length > 0) {
+        taskList.pop();
+        updateTaskList();
+      }
+    }
+  </script>
+</body>
+</html>

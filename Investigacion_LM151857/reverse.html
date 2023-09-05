@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejemplo reverse() en JavaScript</title>
+</head>
+<body>
+  <h1>Arreglo Inverso</h1>
+  
+  <button onclick="reverseArray()">Invertir Arreglo</button>
+  
+  <ul id="resultList">
+    <!-- Los elementos invertidos se mostrarán aquí -->
+  </ul>
+  
+  <script>
+    const originalArray = ["Manzana", "Banana", "Naranja", "Fresa", "Kiwi"];
+
+    function reverseArray() {
+      const reversedArray = originalArray.slice().reverse(); // Creamos una copia para no modificar el arreglo original
+      const resultList = document.getElementById("resultList");
+      resultList.innerHTML = ""; // Limpiar la lista antes de mostrar los elementos invertidos
+
+      for (let i = 0; i < reversedArray.length; i++) {
+        const listItem = document.createElement("li");
+        listItem.textContent = reversedArray[i];
+        resultList.appendChild(listItem);
+      }
+    }
+  </script>
+</body>
+</html>
